@@ -1,0 +1,462 @@
+<!DOCTYPE html><html><head>
+  <meta charset="utf-8">
+  <meta name="description" content="An educational website full of school topics and academic resources. The perfect place for students to learn.">
+  <meta name="keywords" content="utopia, math, science, ela, social studies, school, study">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <meta name="language" content="English">
+  <meta name="author" content="Utopia">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Utopia">
+  <meta property="og:description" content="An educational website full of school topics and academic resources. The perfect place for students to learn.">
+  <meta property="og:image" content="/favicon.ico">
+  <title>Utopia Education</title>
+  <link rel="icon" type="image/png" href="https://utopiaweb.org/favicon.ico">
+  <style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  background: var(--bkg);
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow-x: hidden;
+
+
+  
+  /*background-color: rgba(0,0,0,0.5);
+  background-blend-mode: multiply;*/
+  animation: 0.7s fadeIn;
+  animation: var(--bkg-anim);
+  /*background-color: #081d28;*/
+  
+  font-family: 'Montserrat';
+}
+
+.frame {
+  width: 100% !important;
+  height: 100vh !important;
+}
+
+.pageLoading {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  right: 20px;
+  background-color: black;
+  box-shadow: 0 0 5px 1px white;
+  color: white;
+  padding: 7px 10px;
+  font-size: 15px;
+}
+
+.loading {
+  animation: rotation 0.9s infinite linear;
+  user-select: none;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+.hider {
+  display: none; /* flex */
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  font-size: 25px;
+  color: #c8c8c8;
+  text-shadow: 2px 2px 4px black;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  text-align: center;
+  margin: auto;
+}
+
+.facts {
+  display: none;
+}
+</style>
+  <link rel="preconnect" href="https://fonts.googleapis.com/">
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+  <style>
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 100;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/montserrat/v30/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCtr6Uw-.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 200;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/montserrat/v30/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCvr6Ew-.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/montserrat/v30/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCs16Ew-.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/montserrat/v30/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCtr6Ew-.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/montserrat/v30/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCtZ6Ew-.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/montserrat/v30/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCu170w-.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/montserrat/v30/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCuM70w-.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/montserrat/v30/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCvr70w-.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/montserrat/v30/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCvC70w-.ttf) format('truetype');
+}
+
+</style>
+  <script>
+//(async function(){
+  /*var scr = document.createElement("script");
+  scr.src = "//acscdn.com/script/aclib.js";
+  scr.setAttribute("id","aclib");
+  scr.setAttribute("type","text/javascript");
+  if(document.head){
+    document.head.appendChild(scr);
+    scr.onload=()=>{
+      aclib.runAutoTag({
+        zoneId: '2bux3o0bxq',
+      });
+    }
+  }*/
+  
+  function inFrame () {
+    try {
+      return window.self !== window.top;
+    } catch (e) {
+      return true;
+    }
+  }
+
+  function usingFirefox(){
+    return navigator.userAgent.indexOf("Firefox") != -1;
+  }
+
+  function encodeXor(str){
+    if (!str) return str;
+    return encodeURIComponent(str.toString().split('').map((char, ind) => ind % 2 ? String.fromCharCode(char.charCodeAt() ^ 2) : char).join(''));
+  }
+
+  function cloak(url){
+    var redirectSite = "https://www.google.com";
+    var popup = false;
+    
+    var frame = window.location.href;
+
+    if(url){
+      frame = window.location.origin + '/math/' + encodeXor(url);
+      popup = true;
+    }
+
+    const params = new Proxy(new URLSearchParams(window.location.search), {
+      get: (searchParams, prop) => searchParams.get(prop),
+    });
+
+    if(localStorage.getItem("tabs") != 'false'){
+      if(url){
+        localStorage.setItem("tabUrl", url);
+      } else {
+        if(window.location.search == ''){
+          localStorage.setItem("tabUrl", window.location.href + "/main.html");
+        } else {
+          localStorage.setItem("tabUrl", window.location.href.replace("/?url=",""));
+        }
+
+        if(params?.url == '/s' || params?.url?.startsWith('/s/')) {
+          //localStorage.removeItem("tabUrl");
+        }
+      }
+      
+      frame = '/s/';
+    }
+
+    var tab = window.open('about:blank', '_blank');
+    tab.document.documentElement.innerHTML = '<!DOCTYPE html><html><head><title>' + (localStorage.getItem("tabCloakTitle") ? localStorage.getItem("tabCloakTitle") : "Utopia") + '</title><link rel="icon" type="image/png" href="' + (localStorage.getItem("tabCloakIcon") ? localStorage.getItem("tabCloakIcon") : window.location.origin + "/favicon.ico") + '"><style>body {margin:0;overflow:hidden}</style></head><body><iframe width="100%" height="100%" src="' + frame + '" frameborder="0"></iframe></body></html>';
+    
+    var script = document.createElement("script");
+    //script.src = window.location.origin+"/studying.js?type=pro";
+    //script.src = "//thubanoa.com/1?z=6632847";
+    script.async = "async";
+    script.setAttribute("data-cfasync", "false");
+    
+    //tab.document.head.appendChild(script);
+    
+    tab.document.close();
+
+    /*if(popup==true){
+      function getRandomInt(min, max) { // inclusive
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+      }
+      var rand = getRandomInt(1, 100);
+      if(rand <= 100){
+        window.open("https://eavesdropthenashame.com/u9xyj239?key=d32d006c917a53a7d56ba34ea240df3d", "_blank");
+      }
+    }*/
+    
+    window.top.location.replace(redirectSite);
+  }
+
+  if(inFrame() != true && usingFirefox() != true && localStorage.getItem("auto_cloak") == "true" && window.location.pathname != "/") {
+    var tab = window.open('about:blank', '_blank');
+    // Popup blocked
+    if(!tab || tab.closed || typeof tab.closed=='undefined'){
+      console.log("Popup blocked");
+      window.top.location.replace(window.location.origin + '?url=' + window.location.pathname); //changeSrc handles the rest
+    } else { // Finish tab b‍y‍p‍a‍s‍s
+      cloak();
+    }
+  }
+
+  if(localStorage.getItem("anti_close") == "true"){
+    if(inFrame() != false){
+      window.top.addEventListener('beforeunload', function (e) {
+        e.preventDefault();
+        e.returnValue = 'Are you sure you want to leave?';
+      });
+    } else {
+      window.addEventListener('beforeunload', function (e) {
+        e.preventDefault();
+        e.returnValue = 'Are you sure you want to leave?';
+      });
+    }
+  }
+
+  var originalTitle = parent.document.title;
+
+  if(localStorage.getItem("tabCloakTitle")){
+    parent.document.title = localStorage.getItem("tabCloakTitle");
+  }
+
+  if(localStorage.getItem("tabCloakIcon")){
+    this.icon = parent.document.querySelector("link[rel~='icon']");
+    if (!this.icon) {
+      this.icon = parent.document.createElement("link");
+      this.icon.rel = "icon";
+      parent.document.getElementsByTagName("head")[0].appendChild(this.icon);
+    }
+    this.icon.href = localStorage.getItem("tabCloakIcon");
+  }
+
+  /*document.addEventListener('visibilitychange', function (event) {
+    if (parent.document.hidden) {
+      if(localStorage.getItem("tabCloakTitle")){
+        parent.document.title = localStorage.getItem("tabCloakTitle");
+      }
+      
+      if(localStorage.getItem("tabCloakIcon")){
+        this.icon = parent.document.querySelector("link[rel~='icon']");
+        if (!this.icon) {
+          this.icon = parent.document.createElement("link");
+          this.icon.rel = "icon";
+          parent.document.getElementsByTagName("head")[0].appendChild(this.icon);
+        }
+        this.icon.href = localStorage.getItem("tabCloakIcon");
+      }
+    } else {
+      parent.document.title = originalTitle;
+      parent.document.querySelector("link[rel~='icon']").href = window.location.origin + "/favicon.ico";
+    }
+
+  });*/
+
+
+  /*const prem = await fetch('/api', {
+    method: "POST",
+    headers: {
+        "accept": "text/plain",
+        "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+        model: "prem",
+        input: window.location.host.indexOf('www.') === 0 ? window.location.host.replace('www.','') : window.location.hostname
+    }),
+  }).then((r)=>{
+    return r.text().then((r) => {
+        return r;
+    });
+  });
+
+  console.log(prem);*/
+//})();
+</script>
+  <meta name="admaven-placement" content="BrHr5qjU6">
+  <script>document.documentElement.style.backgroundColor = "var(--bkg)";</script>
+  <!--<script async src="https://www.googletagmanager.com/gtag/js?id=G-RD0VC48YMW"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-RD0VC48YMW');
+  </script>-->
+</head>
+<body class="future1" style="overflow:hidden;">
+  <script>
+document.body.className = localStorage.getItem("theme") ? localStorage.getItem("theme") : document.body.className;
+
+</script>
+  <!--
+  sandbox="allow-scripts allow-same-origin allow-forms allow-pointer-lock allow-orientation-lock allow-modals allow-top-navigation allow-downloads"
+  -->
+  <iframe class="frame" src="https://utopiaweb.org/main.html" width="100%" height="100%" style="user-select:none;" frameborder="0">An error occured.</iframe>
+  
+  <div class="pageLoading">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAMAAADXqc3KAAAARVBMVEVHcEzQ0NDMzMzPz8/Pz8/Ozs7KysrLy8vLy8vIyMjMzMzMzMzKysrKysrKysrR0dHPz8/MzMzIyMjMzMzW1tbR0dHi4uIWIQQAAAAAFHRSTlMAEsiGLP7xA/38ql8/ZYAh1tq6t4Hs2zAAAADGSURBVCjPbVJbEoMwCCSRp4+qLXj/oza2dawm+5HJsLCQJQAFAoBdZmXcrycEsNcgte1xIQQmcgtXXi4VAg83oteA801nKunLCBVmtcgJRORG9K5rAqkK0IzGRhy6iGcV33Uz+dAqAFbFisAOwZRTJbRu3CIgsWlDqlinyo3mAoNTbowr8Izo6gcKjGSGlSUCaVXvbybuR8phOte2j0uYT7vCuaiUcHgRmf82fK6W1Us6TUfH4zMUUGiP/5N8vo8Z5+LeN/4G8VcJtk+rlikAAAAASUVORK5CYII=" height="15px" class="loading">
+    <span style="padding-left: 9px">Loading...</span>
+  </div>
+  <script>
+var pageLoading = document.querySelector(".pageLoading");
+var frame = document.querySelector(".frame");
+var iframeLoads = 0;
+var loadingDisplay = "flex";
+var bkgColor = "#081d28";
+
+frame.onload = function(){
+  iframeLoads++;
+  if(iframeLoads==1) {
+    //document.body.style.backgroundImage = "none";
+    //document.body.style.backgroundColor = bkgColor;
+  }
+  pageLoading.style.display = "none";
+
+  frame.contentWindow.onunload = unloading;
+
+  if(this.contentWindow.location.pathname.startsWith("/math/")) {
+    document.body.style.background = "none";
+  } else {
+    document.body.style.background = "black";
+  }
+}
+
+function unloading(){
+  pageLoading.style.display = loadingDisplay;
+}
+
+</script>
+  
+  <div class="hider">
+    Click or press any key to hide this from your history.
+  </div>
+  
+  <script>
+function inFrame () {
+  try {
+    return window.self !== window.top;
+  } catch (e) {
+    return true;
+  }
+}
+
+function usingFirefox(){
+  return navigator.userAgent.indexOf("Firefox") != -1;
+}
+
+var redirectSite = "https://www.google.com";
+
+if( window.location.pathname == "/"){
+  const params = new Proxy(new URLSearchParams(window.location.search), {
+    get: (searchParams, prop) => searchParams.get(prop),
+  });
+  if(params.url && params.url.includes("/")){
+    var frameUrl = "/" + params.url.substring(1);
+  } else {
+    var frameUrl = "/main.html";
+  }
+  document.querySelector(".frame").src = window.location.origin + frameUrl;
+
+  if(inFrame() != true && usingFirefox() != true && localStorage.getItem("auto_cloak") == "true"){
+    window.onload = function(){
+      //var openBlank = confirm("Would you like to hide this from your history? (To disable this popup, turn off 'Automatic Hidden Mode' in Settings)");
+      
+      //if(openBlank == true) {
+        document.querySelector(".hider").style.display = "flex";
+        document.onmousedown = () => {cloak()};
+        document.onkeydown = () => {cloak()};
+        /*document.onclick = () => {cloak()};*/
+        //prev openBackup(), now cloak() from all.js
+      //}
+    }
+  }
+}
+
+
+
+</script>
+
+  <div class="facts">
+    <h1>Schoolwork: ELA, Science, History, Math, Literature, Social Studies, and Writing</h1>
+    <h2>School has many educational resources where you can learn, study, and gain knowledge.</h2>
+    <h3>Research historical events. Analyze scientific experiments. Explain the historical importance. Solve with the quadratic formula. Find the theme of the literature. Learn about George Washington in social studies. Write an essay about homework.</h3>
+  </div>
+  <!--<script data-cfasync="false" type='text/javascript' src='https://eavesdropthenashame.com/8d/c7/7b/8dc77b4f9efb36181afd2f65ce4e4f63.js'></script>-->
+
+
+</body></html>
